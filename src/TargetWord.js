@@ -1,13 +1,11 @@
 import React, { useState } from "react";
-import { Button } from '@material-ui/core';
-
+import { Button } from "@material-ui/core";
 
 export const TargetWord = ({ depths, graph }) => {
   const [target, setTarget] = useState();
   const [difficultyLevel, setDifficultyLevel] = useState(3);
 
   const updateTarget = (difficultyLevel) => {
-    console.log(difficultyLevel);
     const wordsOfThisDepth = Object.keys(depths).filter(
       (word) => depths[word] === difficultyLevel
     );
@@ -43,43 +41,53 @@ export const TargetWord = ({ depths, graph }) => {
           justifyContent: "space-between",
           alignItems: "center",
           marginBottom: 4,
-          display: "inline-flex"
+          display: "inline-flex",
         }}
       >
         <div>
-          <Button onClick={onMinus}
+          <Button
+            onClick={onMinus}
             variant="outlined"
             color="primary"
             style={{ margin: 8 }}
-            size='small'
+            size="small"
           >
             -
-        </Button>
+          </Button>
         </div>
         <div
           variant="outlined"
           color="primary"
-          style={{ margin: 8, fontFamily: 'verdana', fontSize: 16 }}>
+          style={{ margin: 8, fontFamily: "verdana", fontSize: 16 }}
+        >
           Current difficulty: {difficultyLevel}
         </div>
         <div>
-          <Button onClick={onPlus}
+          <Button
+            onClick={onPlus}
             variant="outlined"
             color="primary"
             style={{ margin: 8 }}
-            size='small'
+            size="small"
           >
             +
-        </Button>
+          </Button>
         </div>
-
       </div>
-      <div
-        style={{ textAlign: 'center', fontFamily: 'verdana', fontSize: 12 }}
-      >
+      <div style={{ textAlign: "center", fontFamily: "verdana", fontSize: 12 }}>
         Try finding the word:
-        <div style={{ color: '#d63e13', fontFamily: 'verdana', fontSize: 16, textTransform: 'uppercase' }}>{target}</div>
+        <div
+          style={{
+            color: "#d63e13",
+            fontFamily: "verdana",
+            fontSize: 20,
+            textTransform: "uppercase",
+            marginTop: 4,
+          }}
+        >
+          {target}
+        </div>
       </div>
-    </div >
+    </div>
   );
 };
