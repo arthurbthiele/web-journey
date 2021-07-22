@@ -38,7 +38,7 @@ export const WordInput = ({
         placeholder="Please enter a word..."
         fullWidth
         onChange={(event) => {
-          setValue(event.target.value);
+          setValue(event.target.value.toLowerCase());
         }}
         onKeyPress={(ev) => {
           if (ev.key === "Enter") {
@@ -56,13 +56,13 @@ export const WordInput = ({
           color: wordIsValid ? "green" : "#d63e13",
           marginBottom: 8,
           fontFamily: "verdana",
-          fontSize: 12,
+          fontSize: 14,
         }}
       >
         {message}
       </div>
 
-      <Button onClick={onClick} variant="outlined" margin="normal">
+      <Button onClick={onClick} variant="outlined" margin="normal" fullWidth>
         Input node and edge
       </Button>
     </div>

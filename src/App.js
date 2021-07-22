@@ -10,8 +10,8 @@ function App() {
     edges: [],
   });
   const [selectedWord, setSelectedWord] = useState("a");
-
   const depths = useMemo(initialiseDepths, []);
+
   updateDepths(depths, graph.nodes);
 
   return (
@@ -56,16 +56,17 @@ function App() {
             style={{
               marginBottom: 8,
               fontFamily: "verdana",
-              fontSize: 12,
-              width: 212,
+              fontSize: 14,
+              width: 228,
             }}
           >
             Select a word, and type in a 'connected' word - one which differs by
-            the adding, removing or swapping one letter. <br />
+            the adding, removing or swapping of one letter. <br />
             Art → cart by addition <br />
             Art → at by removal <br />
             Art → ant by swap <br />
-            <div style={{ marginTop: 8, color: "#333333" }}>
+            Try starting by inserting the word 'at'!
+            <div style={{ marginTop: 8, color: "#333333", fontSize: 12 }}>
               Created by Arthur Thiele, © 2021.
             </div>
           </div>

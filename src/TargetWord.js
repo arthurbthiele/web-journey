@@ -4,6 +4,7 @@ import { Button } from "@material-ui/core";
 export const TargetWord = ({ depths, graph }) => {
   const [target, setTarget] = useState();
   const [difficultyLevel, setDifficultyLevel] = useState(3);
+  const [score, setScore] = useState(0);
 
   const updateTarget = (difficultyLevel) => {
     const wordsOfThisDepth = Object.keys(depths).filter(
@@ -16,6 +17,10 @@ export const TargetWord = ({ depths, graph }) => {
       setTarget("There are no words of this depth");
     }
   };
+
+  if (graph.nodes.map((n) => n.id).includes(target)) {
+    setScore(score + difficultyLevel ** 2);
+  }
 
   if (!target || graph.nodes.map((n) => n.id).includes(target)) {
     updateTarget(difficultyLevel);
@@ -33,6 +38,7 @@ export const TargetWord = ({ depths, graph }) => {
       setDifficultyLevel(difficultyLevel - 1);
     }
   };
+
   return (
     <div>
       <div
@@ -74,7 +80,7 @@ export const TargetWord = ({ depths, graph }) => {
           </Button>
         </div>
       </div>
-      <div style={{ textAlign: "center", fontFamily: "verdana", fontSize: 12 }}>
+      <div style={{ textAlign: "center", fontFamily: "verdana", fontSize: 14 }}>
         Try finding the word:
         <div
           style={{
@@ -87,6 +93,7 @@ export const TargetWord = ({ depths, graph }) => {
         >
           {target}
         </div>
+        <div>Your score is: {score}</div>
       </div>
     </div>
   );
