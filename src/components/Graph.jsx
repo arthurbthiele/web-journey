@@ -1,5 +1,6 @@
 import GraphVis from "react-graph-vis";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { GraphContext } from "./GraphProvider";
 
 const options = {
   edges: {
@@ -12,7 +13,9 @@ const options = {
   },
 };
 
-export const Graph = ({ graph, setSelectedWord, selectedWord, style }) => {
+export const Graph = () => {
+  const { selectedWord, setSelectedWord, graph } = useContext(GraphContext);
+
   const [network, setNetwork] = useState();
   const setNetworkInstance = (nw) => {
     setNetwork(nw);
@@ -20,8 +23,7 @@ export const Graph = ({ graph, setSelectedWord, selectedWord, style }) => {
 
   const events = {
     select: (event) => {
-      if (event.nodes[0]?.id || event.nodes[0])
-        setSelectedWord(event.nodes[0]?.id || event.nodes[0]);
+      setSelectedWord(event.nodes[0]);
     },
     afterDrawing: () => {
       if (selectedWord && selectedWord !== network?.getSelectedNodes()[0]) {
@@ -43,7 +45,6 @@ export const Graph = ({ graph, setSelectedWord, selectedWord, style }) => {
         graph={graph}
         options={options}
         events={events}
-        selectedNodes={[selectedWord]}
         getNetwork={setNetworkInstance}
         id={graph.edges.length}
       />

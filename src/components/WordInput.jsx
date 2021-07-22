@@ -1,15 +1,14 @@
 import React, { useState, useRef } from "react";
-import { wordGraph } from "./graphEntries";
-import { wordsAreConnected } from "./wordAreConnected";
+import { wordGraph } from "../dictionaryData";
+import { wordsAreConnected } from "../utilities/wordAreConnected";
 import { TextField, Button } from "@material-ui/core";
+import { GraphContext } from "./GraphProvider";
 
-export const WordInput = ({
-  setGraph,
-  graph,
-  selectedWord,
-  setSelectedWord,
-  createNode,
-}) => {
+export const WordInput = () => {
+  const { selectedWord, setSelectedWord, graph, setGraph } = React.useContext(
+    GraphContext
+  );
+
   const [value, setValue] = useState("");
   const ref = useRef();
   const wordIsValid = value in wordGraph;
@@ -31,7 +30,7 @@ export const WordInput = ({
   };
 
   return (
-    <div>
+    <div style={{ position: "absolute", left: 16, top: 16 }}>
       <TextField
         margin="normal"
         type="string"

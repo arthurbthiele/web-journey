@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Button } from "@material-ui/core";
+import { GraphContext } from "./GraphProvider";
 
-export const TargetWord = ({ depths, graph }) => {
+export const TargetWord = () => {
   const [target, setTarget] = useState();
   const [difficultyLevel, setDifficultyLevel] = useState(3);
   const [score, setScore] = useState(0);
+  const { graph, depths } = useContext(GraphContext);
 
   const updateTarget = (difficultyLevel) => {
     const wordsOfThisDepth = Object.keys(depths).filter(
@@ -40,7 +42,7 @@ export const TargetWord = ({ depths, graph }) => {
   };
 
   return (
-    <div>
+    <div style={{ position: "absolute", right: 16, top: 16 }}>
       <div
         style={{
           flexDirection: "row",

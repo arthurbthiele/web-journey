@@ -1,4 +1,4 @@
-import { wordGraph } from "./graphEntries";
+import { wordGraph } from "../dictionaryData";
 export const wordsAreConnected = (word1, word2) => {
   if (!word2 || typeof word2 != "string") {
     return false;
