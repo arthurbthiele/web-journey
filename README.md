@@ -57,4 +57,4 @@ The component responsible for drawing and manipulating the graph is the `Graph.j
 ### Graph Context
 The users graph so far is stored in the context of the `GraphProvider.jsx` component, and can be accessed by the children of this component using, for example:
 `const { graph } = useContext(GraphContext);`
-The graph itself is a list of nodes and edges that have been entered by the user, and is initialised as just the node 'a'.
+The graph itself is a list of nodes and edges that have been entered by the user, and is initialised as just the node `a`.
