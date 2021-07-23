@@ -1,9 +1,9 @@
 
 # Word Journey
 
-![Example Game](word-journey%20demo%20graph.png?raw=true "Title")
-
 A simple game implemented as an exercise to learn React.
+
+![Example Game](word-journey%20demo%20graph.png?raw=true "Title")
 
 Currently hosted at [Github Pages](https://arthurbthiele.github.io/word-journey/)
 
