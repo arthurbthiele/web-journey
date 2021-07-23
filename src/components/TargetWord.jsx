@@ -7,6 +7,8 @@ export const TargetWord = () => {
   const [difficultyLevel, setDifficultyLevel] = useState(3);
   const [score, setScore] = useState(0);
   const { graph, depths } = useContext(GraphContext);
+  const minDifficulty = 1;
+  const maxDifficulty = 15;
 
   const updateTarget = (difficultyLevel) => {
     const wordsOfThisDepth = Object.keys(depths).filter(
@@ -29,13 +31,13 @@ export const TargetWord = () => {
   }
 
   const onPlus = () => {
-    if (difficultyLevel < 15) {
+    if (difficultyLevel < maxDifficulty) {
       updateTarget(difficultyLevel + 1);
       setDifficultyLevel(difficultyLevel + 1);
     }
   };
   const onMinus = () => {
-    if (difficultyLevel > 1) {
+    if (difficultyLevel > minDifficulty) {
       updateTarget(difficultyLevel - 1);
       setDifficultyLevel(difficultyLevel - 1);
     }

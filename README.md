@@ -1,8 +1,10 @@
-# Getting Started with Create React App
+# Word Journey
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple game implemented as an exercise to learn React.
 
-## Available Scripts
+Currently hosted at [Github Pages](https://arthurbthiele.github.io/word-journey/)
+
+## Getting Started
 
 In the project directory, you can run:
 
@@ -12,59 +14,26 @@ Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
+### `yarn deploy`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Uses the [`gh-pages`](https://www.npmjs.com/package/gh-pages) package to deploy the project to Github.
 
-### `yarn build`
+## Project Design
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The game centres around word 'connections'. Two words are deemed 'connected' if one can be transformed into the other by:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- removing a letter (for example, cat → at)
+- adding a letter (for example, cat → cart)
+- exchanging a letter for a different letter (for example, cat → bat)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The symmetric relation 'connected' creates a graph structure on arbitrary collections of words. The source dictionary for this particular game comes from the [List of the Most Common English Words](https://github.com/dolph/dictionary). I chose this dictionary to include most common words while excluding obvious non-words, like 'nonly'. This does mean, however, that some reasonably common words, like 'badger' or 'hexagon' may not be in this dictionary. Suggestions for how to include all 'real words' while not including obvious non-words are appreciated.
 
-### `yarn eject`
+Since the game centres around connections, I have only included words that are reachable by some chain of connections from the letter 'a'. This is the largest connected component of the graph defined by the 'connected' relation and the chosen dictionary, and contains 9423 words. Trivia: the shortest word which is not in this cluster is the word 'ebb', which is the only unreachable word with 3 letters.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The list of words I am using in this project is in the `dictionaryData` folder, in the form of a JavaScript object with keys being the word, and values being all words which are connected to the key by the relation described above. For compatibility with some packages, this dictionary is stored in 26 sub-files, organised by first letter.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Package Choices
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The core component of this project is rendered with the [`react-graph-vis`](https://www.npmjs.com/package/react-graph-vis) package.
+Buttons and text-fields are build with the [`material-ui`](https://material-ui.com/) framework.

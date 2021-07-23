@@ -12,6 +12,7 @@ const options = {
     zoomView: false,
   },
 };
+const dimensionsToKey = (x, y) => `x${x}y${y}`;
 
 export const Graph = () => {
   const { selectedWord, setSelectedWord, graph } = useContext(GraphContext);
@@ -20,7 +21,6 @@ export const Graph = () => {
   const setNetworkInstance = (nw) => {
     setNetwork(nw);
   };
-
   const events = {
     select: (event) => {
       setSelectedWord(event.nodes[0]);
@@ -47,6 +47,7 @@ export const Graph = () => {
         events={events}
         getNetwork={setNetworkInstance}
         id={graph.edges.length}
+        key={dimensionsToKey(window.innerWidth, window.innerHeight)}
       />
     </div>
   );
