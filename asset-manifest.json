@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/word-journey/static/js/main.a3d05f72.chunk.js",
-    "main.js.map": "/word-journey/static/js/main.a3d05f72.chunk.js.map",
+    "main.js": "/word-journey/static/js/main.e3138417.chunk.js",
+    "main.js.map": "/word-journey/static/js/main.e3138417.chunk.js.map",
     "runtime-main.js": "/word-journey/static/js/runtime-main.7e260adb.js",
     "runtime-main.js.map": "/word-journey/static/js/runtime-main.7e260adb.js.map",
     "static/js/2.5b8ceba3.chunk.js": "/word-journey/static/js/2.5b8ceba3.chunk.js",
@@ -12,6 +12,6 @@
   "entrypoints": [
     "static/js/runtime-main.7e260adb.js",
     "static/js/2.5b8ceba3.chunk.js",
-    "static/js/main.a3d05f72.chunk.js"
+    "static/js/main.e3138417.chunk.js"
   ]
 }
