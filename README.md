@@ -13,8 +13,6 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-
 ### `yarn deploy`
 
 Uses the [`gh-pages`](https://www.npmjs.com/package/gh-pages) package to deploy the project to Github.
@@ -31,9 +29,9 @@ The symmetric relation 'connected' creates a graph structure on arbitrary collec
 
 Since the game centres around connections, I have only included words that are reachable by some chain of connections from the letter 'a'. This is the largest connected component of the graph defined by the 'connected' relation and the chosen dictionary, and contains 9423 words. Trivia: the shortest word which is not in this cluster is the word 'ebb', which is the only unreachable word with 3 letters.
 
-The list of words I am using in this project is in the `dictionaryData` folder, in the form of a JavaScript object with keys being the word, and values being all words which are connected to the key by the relation described above. For compatibility with some packages, this dictionary is stored in 26 sub-files, organised by first letter.
+The list of words I am using in this project is in the `dictionaryData` folder, in the form of a JavaScript object with keys being the word, and values being all words which are connected to the key by the relation described above. For compatibility with some packages used in the development process (Webpack), this dictionary is stored in 26 sub-files, organised by first letter.
 
-## Package Choices
+## Packages
 
 The core component of this project is rendered with the [`react-graph-vis`](https://www.npmjs.com/package/react-graph-vis) package.
-Buttons and text-fields are build with the [`material-ui`](https://material-ui.com/) framework.
+Buttons and text-fields are built with the [`material-ui`](https://material-ui.com/) framework.
