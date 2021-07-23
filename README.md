@@ -4,6 +4,9 @@ A simple game implemented as an exercise to learn React.
 
 Currently hosted at [Github Pages](https://arthurbthiele.github.io/word-journey/)
 
+![Example Game](./word-journey_demo_graph.png?raw=true "Title")
+
+
 ## Project Design
 
 The game centres around word 'connections'. Two words are deemed 'connected' if one can be transformed into the other by:
