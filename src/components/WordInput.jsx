@@ -3,6 +3,8 @@ import { wordGraph } from "../dictionaryData";
 import { wordsAreConnected } from "../utilities/wordAreConnected";
 import { TextField, Button } from "@material-ui/core";
 import { GraphContext } from "./GraphProvider";
+import { colors } from "../assets";
+import { Text } from "./Text";
 
 export const WordInput = () => {
   const { selectedWord, setSelectedWord, graph, setGraph } = React.useContext(
@@ -12,9 +14,11 @@ export const WordInput = () => {
   const [value, setValue] = useState("");
   const ref = useRef();
   const wordIsValid = value in wordGraph;
-  const message = wordIsValid
-    ? "This word is in the dictionary"
-    : "This word is not in the dictionary";
+  const message = value
+    ? wordIsValid
+      ? "This word is in the dictionary"
+      : "This word is not in the dictionary"
+    : "";
   const onClick = () => {
     const newNode = { id: value, label: value };
     const newEdge = { from: selectedWord, to: value };
@@ -50,16 +54,14 @@ export const WordInput = () => {
         }}
         inputRef={ref}
       />
-      <div
+      <Text
         style={{
-          color: wordIsValid ? "green" : "#d63e13",
+          color: wordIsValid ? colors.green : colors.red,
           marginBottom: 8,
-          fontFamily: "verdana",
-          fontSize: 14,
         }}
       >
         {message}
-      </div>
+      </Text>
 
       <Button onClick={onClick} variant="outlined" margin="normal" fullWidth>
         Input node and edge

@@ -1,10 +1,10 @@
+import { fonts } from "../../assets";
+import { Text } from "../Text";
 export const Instructions = () => (
   <div>
-    <div
+    <Text
       style={{
         marginBottom: 8,
-        fontFamily: "verdana",
-        fontSize: 14,
         width: 228,
       }}
     >
@@ -16,9 +16,9 @@ export const Instructions = () => (
       Art → cart, by addition <br />
       Art → at, by removal <br />
       Art → ant, by exchange <br />
-      <div style={{ marginTop: 8, color: "#333333", fontSize: 12 }}>
+      <Text style={{ ...fonts.secondary.footer, marginTop: 8 }}>
         Created by Arthur Thiele, © 2021.
-      </div>
-    </div>
+      </Text>
+    </Text>
   </div>
 );

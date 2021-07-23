@@ -1,6 +1,8 @@
 import React, { useState, useContext } from "react";
 import { Button } from "@material-ui/core";
 import { GraphContext } from "./GraphProvider";
+import { Text } from "./Text";
+import { fonts } from "../assets";
 
 export const TargetWord = () => {
   const [target, setTarget] = useState();
@@ -54,51 +56,43 @@ export const TargetWord = () => {
           display: "inline-flex",
         }}
       >
-        <div>
-          <Button
-            onClick={onMinus}
-            variant="outlined"
-            color="primary"
-            style={{ margin: 8 }}
-            size="small"
-          >
-            -
-          </Button>
-        </div>
-        <div
+        <Button
+          onClick={onMinus}
           variant="outlined"
           color="primary"
-          style={{ margin: 8, fontFamily: "verdana", fontSize: 16 }}
+          style={{ margin: 8 }}
+          size="small"
         >
+          -
+        </Button>
+
+        <Text style={{ ...fonts.primary.medium, margin: 8 }}>
           Current difficulty: {difficultyLevel}
-        </div>
-        <div>
-          <Button
-            onClick={onPlus}
-            variant="outlined"
-            color="primary"
-            style={{ margin: 8 }}
-            size="small"
-          >
-            +
-          </Button>
-        </div>
+        </Text>
+
+        <Button
+          onClick={onPlus}
+          variant="outlined"
+          color="primary"
+          style={{ margin: 8 }}
+          size="small"
+        >
+          +
+        </Button>
       </div>
-      <div style={{ textAlign: "center", fontFamily: "verdana", fontSize: 14 }}>
+      <Text style={{ textAlign: "center" }}>
         Try finding the word:
-        <div
+        <Text
           style={{
-            color: "#d63e13",
-            fontFamily: "verdana",
-            fontSize: 20,
+            ...fonts.primary.display,
             textTransform: "uppercase",
             marginTop: 4,
           }}
         >
           {target}
-        </div>
-        <div>Your score is: {score}</div>
-      </div>
+        </Text>
+        <Text>Your score is: {score}</Text>
+      </Text>
     </div>
   );
 };
