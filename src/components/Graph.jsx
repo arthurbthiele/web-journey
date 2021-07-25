@@ -2,18 +2,6 @@ import GraphVis from "react-graph-vis";
 import React, { useState, useContext } from "react";
 import { GraphContext } from "./GraphProvider";
 
-const options = {
-  edges: {
-    arrows: {
-      to: false,
-    },
-  },
-  interaction: {
-    zoomView: false,
-  },
-};
-const dimensionsToKey = (x, y) => `x${x}y${y}`;
-
 export const Graph = () => {
   const { selectedWord, setSelectedWord, graph } = useContext(GraphContext);
 
@@ -52,3 +40,16 @@ export const Graph = () => {
     </div>
   );
 };
+
+const options = {
+  edges: {
+    arrows: {
+      to: false,
+    },
+  },
+  interaction: {
+    zoomView: false,
+  },
+};
+
+const dimensionsToKey = (x, y) => `x${x}y${y}`;

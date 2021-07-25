@@ -5,3 +5,6 @@ export const colors = {
   darkBlue: "#8ab0e1",
   grey: "#333333",
 };
+
+// depressedLightOrange: "#DAB079",
+// lightOrange: "#FAD099",
