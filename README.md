@@ -5,7 +5,7 @@ A simple game implemented as an exercise to learn React.
 
 ![Example Game](word-journey%20demo%20graph.png?raw=true "Title")
 
-Currently hosted [here](https://arthurbthiele.github.io/word-journey/)
+Currently hosted [here](https://arthurbthiele.github.io/word-journey/), on Github Pages
 
 ## Project Design
 
