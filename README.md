@@ -45,6 +45,10 @@ and run the app in development mode:
 
 Open [`http://localhost:3000`](http://localhost:3000) to view it in the browser.
 
+`yarn test`
+
+Runs all tests and outputs results.
+
 `yarn deploy`
 
 Uses the [`gh-pages`](https://www.npmjs.com/package/gh-pages) package to deploy the project to Github.
