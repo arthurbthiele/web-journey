@@ -42,6 +42,7 @@
   },
   "homepage": "http://arthurbthiele.github.io/word-journey",
   "devDependencies": {
-    "gh-pages": "^3.2.3"
+    "gh-pages": "^3.2.3",
+    "prettier": "2.4.1"
   }
 }

@@ -3,7 +3,7 @@ import { Instructions } from "./Instructions";
 import { ShowInstructionsButton } from "./ShowInstructionsButton";
 
 export const InstructionsController = () => {
-  const [showInstructions, setShowInstructions] = useState(false);
+  const [showInstructions, setShowInstructions] = useState(true);
   const toggleShowInstructions = () => {
     setShowInstructions(!showInstructions);
   };
