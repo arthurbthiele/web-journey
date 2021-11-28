@@ -7,9 +7,8 @@ import { colors } from "../assets";
 import { Text } from "./Text";
 
 export const WordInput = () => {
-  const { selectedWord, setSelectedWord, graph, setGraph } = React.useContext(
-    GraphContext
-  );
+  const { selectedWord, setSelectedWord, graph, setGraph } =
+    React.useContext(GraphContext);
 
   const [value, setValue] = useState("");
   const ref = useRef();
@@ -34,7 +33,18 @@ export const WordInput = () => {
   };
 
   return (
-    <div style={{ position: "absolute", left: 16, top: 16 }}>
+    <div
+      style={{
+        position: "absolute",
+        left: 16,
+        top: 16,
+        border: "1px solid rgba(0, 0, 0, 0.3)",
+        backgroundColor: "rgba(255, 255, 255, 1)",
+
+        borderRadius: 10,
+        padding: 10,
+      }}
+    >
       <TextField
         margin="normal"
         type="string"

@@ -46,7 +46,17 @@ export const TargetWord = () => {
   };
 
   return (
-    <div style={{ position: "absolute", right: 16, top: 16 }}>
+    <div
+      style={{
+        position: "absolute",
+        right: 16,
+        top: 16,
+        backgroundColor: "rgba(255, 255, 255, 1)",
+        border: "1px solid rgba(0, 0, 0, 0.3)",
+        borderRadius: 10,
+        padding: 10,
+      }}
+    >
       <div
         style={{
           flexDirection: "row",

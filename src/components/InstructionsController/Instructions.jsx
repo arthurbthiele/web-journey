@@ -9,6 +9,7 @@ export const Instructions = () => (
         border: "1px solid rgba(0, 0, 0, 0.3)",
         borderRadius: 10,
         padding: 5,
+        backgroundColor: "rgba(255, 255, 255, 1)",
       }}
     >
       Try starting by clicking the blue 'a' to select it, then typing the word
@@ -24,6 +25,8 @@ export const Instructions = () => (
       The goal is to reach the target words (displayed in the top right corner)
       to increase your score. You can adjust the difficulty using the 'plus' and
       'minus' buttons. <br />
+      Zoom in and out on the graph by scrolling. If you get lost or want to
+      recentre, double click anywhere. <br />
       Your score increases by the square of your current difficulty whenever you
       reach a target word, so challenge yourself! <br />
       You can close these instructions by clicking the instructions button
