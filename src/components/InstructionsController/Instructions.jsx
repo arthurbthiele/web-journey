@@ -9,13 +9,17 @@ export const Instructions = () => (
         border: "1px solid rgba(0, 0, 0, 0.3)",
         borderRadius: 10,
         padding: 5,
-        backgroundColor: "rgba(255, 255, 255, 1)",
+        backgroundColor: "rgba(255, 255, 255, 0.9)",
       }}
     >
-      Try starting by clicking the blue 'a' to select it, then typing the word
-      'at' in the input field at top left, and pressing enter. <br />
-      Click any word to select it. You can see that it is selected if the text
-      of the word is bold. <br />
+      <p>
+        Try starting by clicking the blue 'a' to select it, then typing the word
+        'at' in the input field at top left, and pressing enter.{" "}
+      </p>
+      <p>
+        Click any word to select it. You can see that it is selected if the text
+        of the word is bold.{" "}
+      </p>
       Then type a word that is 'connected' to that word, and press enter. <br />
       Words are deemed 'connected' if they differ by the addition, removal or
       exchange of one letter: <br />

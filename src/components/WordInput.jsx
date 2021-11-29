@@ -39,7 +39,7 @@ export const WordInput = () => {
         left: 16,
         top: 16,
         border: "1px solid rgba(0, 0, 0, 0.3)",
-        backgroundColor: "rgba(255, 255, 255, 1)",
+        backgroundColor: "rgba(255, 255, 255, 0.9)",
 
         borderRadius: 10,
         padding: 10,

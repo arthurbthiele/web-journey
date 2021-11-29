@@ -28,7 +28,6 @@ export const Graph = () => {
     doubleClick: () => {
       network?.fit({
         minZoomLevel: 0.5,
-        maxZoomLevel: 2,
         animation: {
           duration: 300,
         },
