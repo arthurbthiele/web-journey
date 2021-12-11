@@ -35,7 +35,9 @@ export const Instructions = () => (
       reach a target word, so challenge yourself! <br />
       You can close these instructions by clicking the instructions button
       below. <br />
-      Please send feedback or comments to arthurbthiele@gmail.com
+      Please send feedback or comments to arthurbthiele@gmail.com, or use{" "}
+      <a href="https://forms.gle/KmDLHJ3Mas3kzcjz7">this form</a> to suggest
+      word additions or removals:
       <Text style={{ ...fonts.secondary.footer, marginTop: 8 }}>
         Created by Arthur Thiele, © 2021.
       </Text>
